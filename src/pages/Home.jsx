@@ -22,9 +22,12 @@ const styles = {
     fontWeight: '600',
   },
   logo: {
-    fontSize: '4rem',
+    height: '90px',
+    width: 'auto',
+    objectFit: 'contain',
     marginBottom: '10px',
     filter: 'drop-shadow(0 4px 16px rgba(255,215,0,0.5))',
+    borderRadius: '12px',
   },
   title: {
     fontSize: '2.8rem',
@@ -156,7 +159,7 @@ export default function Home() {
   return (
     <div style={styles.page}>
       <div style={styles.topBadge}>✦ खत्री अलंकार ✦</div>
-      <div style={styles.logo}>💎</div>
+      <img src="/Khatri.ai.png" alt="Khatri Alankar" style={styles.logo} onError={e => { e.target.style.display = 'none' }} />
       <h1 style={styles.title}>KA Calculator</h1>
       <p style={styles.titleHindi}>सोना-चाँदी भाव कैलकुलेटर</p>
       <p style={styles.subtitle}>Khatri Alankar Jewellers</p>

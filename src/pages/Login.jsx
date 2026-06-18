@@ -26,7 +26,7 @@ const s = {
     marginBottom: '28px',
     gap: '8px',
   },
-  logo: { fontSize: '2.5rem' },
+  logo: { height: '64px', width: 'auto', objectFit: 'contain', borderRadius: '8px' },
   title: { fontSize: '1.7rem', fontWeight: '700', color: '#1a1a2e' },
   subtitle: { fontSize: '0.88rem', color: '#888', marginTop: '2px' },
   label: {
@@ -108,7 +108,7 @@ export default function Login() {
     <div style={s.page}>
       <div style={s.card}>
         <div style={s.logoRow}>
-          <span style={s.logo}>💎</span>
+          <img src="/Khatri.ai.png" alt="KA Logo" style={s.logo} onError={e => { e.target.style.display = 'none' }} />
           <h1 style={s.title}>Admin Login</h1>
           <span style={s.subtitle}>KA Calculator — Khatri Alankar</span>
         </div>
