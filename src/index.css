@@ -1,0 +1,70 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --gold-bg: #FFFBF0;
+  --gold-header-from: #FFD700;
+  --gold-header-to: #FFA500;
+  --gold-border: #DAA520;
+  --gold-btn: #DAA520;
+  --gold-btn-hover: #B8860B;
+  --gold-badge-bg: #FFF3CD;
+  --gold-badge-text: #856404;
+
+  --silver-bg: #F8F9FA;
+  --silver-header-from: #C0C0C0;
+  --silver-header-to: #808080;
+  --silver-border: #A9A9A9;
+  --silver-btn: #708090;
+  --silver-btn-hover: #556070;
+  --silver-badge-bg: #E9ECEF;
+  --silver-badge-text: #495057;
+
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(0,0,0,0.1);
+  --shadow-hover: 0 8px 30px rgba(0,0,0,0.18);
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.5;
+  color: #1a1a1a;
+  background: #f0f2f5;
+  min-height: 100vh;
+}
+
+input, select, button, textarea {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input:focus, select:focus {
+  outline: none;
+}
+
+.page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+}
