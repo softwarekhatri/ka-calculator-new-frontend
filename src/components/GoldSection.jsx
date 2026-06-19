@@ -61,15 +61,15 @@ const s = {
   badgeLabel: {
     display: "block",
     fontSize: "0.7rem",
-    fontWeight: "400",
-    color: "#ffe08a",
+    fontWeight: "700",
+    color: "#3d1a00",
     marginBottom: "2px",
     letterSpacing: "0.5px",
   },
   badgePrice: {
     fontSize: "1.1rem",
     fontWeight: "800",
-    color: "#ffffff",
+    color: "#1a0800",
   },
   body: { padding: "22px 22px 26px" },
   label: {
