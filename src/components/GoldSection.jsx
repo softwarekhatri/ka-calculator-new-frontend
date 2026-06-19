@@ -245,7 +245,7 @@ export default function GoldSection({ prices, categories }) {
           {/* Weight */}
           <div style={s.field}>
             <label style={s.label}>
-              वजन <span style={s.labelSub}>(grams)</span>
+              वजन <span style={s.labelSub}>(weight in grams)</span>
             </label>
             <input
               type="number"
@@ -272,7 +272,8 @@ export default function GoldSection({ prices, categories }) {
           {/* Category */}
           <div style={s.field}>
             <label style={s.label}>
-              आभूषण का प्रकार <span style={s.labelSub}>(Category)</span>
+              आभूषण का प्रकार
+              {/* <span style={s.labelSub}>(Category)</span> */}
             </label>
             {categories.length === 0 ? (
               <p style={s.noCategories}>कोई श्रेणी नहीं। Admin से जोड़ें।</p>
