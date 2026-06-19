@@ -4,7 +4,10 @@ function fmt(num) {
   return Math.round(num).toLocaleString("en-IN");
 }
 function fmtDec(num) {
-  return Number(num).toLocaleString("en-IN", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+  return Number(num).toLocaleString("en-IN", {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+  });
 }
 
 const s = {
@@ -100,8 +103,18 @@ const s = {
     gap: "2px",
   },
   rowLabel: { color: "#666", fontWeight: "500", fontSize: "0.88rem" },
-  rowLabelSub: { display: "block", fontSize: "0.72rem", color: "#aaa", fontWeight: "400" },
-  rowValue: { color: "#1a1a1a", fontWeight: "700", fontSize: "0.95rem", textAlign: "right" },
+  rowLabelSub: {
+    display: "block",
+    fontSize: "0.72rem",
+    color: "#aaa",
+    fontWeight: "400",
+  },
+  rowValue: {
+    color: "#1a1a1a",
+    fontWeight: "700",
+    fontSize: "0.95rem",
+    textAlign: "right",
+  },
   purchaseBlock: (isGold) => ({
     background: isGold ? "rgba(212,168,0,0.06)" : "rgba(74,90,110,0.06)",
     borderRadius: "10px",
@@ -140,9 +153,10 @@ export default function ResultCard({
   real10gPrice,
 }) {
   const isGold = metalType === "gold";
-  const makingLabel = cat?.makingChargeType === "per_gram"
-    ? `बनाई (₹${fmtDec(cat.makingCharge)}/ग्राम)`
-    : `बनाई (Fixed)`;
+  const makingLabel =
+    cat?.makingChargeType === "per_gram"
+      ? `बनाई (₹${fmtDec(cat.makingCharge)}/ग्राम)`
+      : `बनाई (Fixed)`;
 
   return (
     <div style={s.card(isGold)}>
@@ -150,7 +164,8 @@ export default function ResultCard({
       <div style={s.cardHeader(isGold)}>
         <span>{isGold ? "🥇" : "🥈"}</span>
         <span style={s.cardHeaderText}>
-          {isGold ? "सोने का मूल्य विवरण" : "चाँदी का मूल्य विवरण"} — Calculation Result
+          {isGold ? "सोने का मूल्य विवरण" : "चाँदी का मूल्य विवरण"} —
+          Calculation Result
         </span>
       </div>
 
@@ -185,7 +200,9 @@ export default function ResultCard({
           </span>
           <span style={s.rowValue}>
             {weight} ग्राम{" "}
-            <span style={{ color: "#999", fontWeight: "500", fontSize: "0.82rem" }}>
+            <span
+              style={{ color: "#999", fontWeight: "500", fontSize: "0.82rem" }}
+            >
               ({toHindiNumerals(String(weight))} ग्राम)
             </span>
           </span>
@@ -210,10 +227,15 @@ export default function ResultCard({
         <div style={s.divider(isGold)} />
 
         {/* Sale breakdown */}
-        <div style={s.sectionTitle(isGold)}>विक्रय मूल्य विवरण (Sale Breakdown)</div>
+        <div style={s.sectionTitle(isGold)}>
+          विक्रय मूल्य विवरण (Sale Breakdown)
+        </div>
         <div style={s.row}>
           <span style={s.rowLabel}>
-            धातु मूल्य <span style={s.rowLabelSub}>(Sale Tunch × {real10gPrice?.toLocaleString('en-IN')}/10g)</span>
+            धातु मूल्य{" "}
+            <span style={s.rowLabelSub}>
+              (Sale Tunch × {real10gPrice?.toLocaleString("en-IN")}/10g)
+            </span>
           </span>
           <span style={s.rowValue}>₹ {fmt(saleMetalPrice)}</span>
         </div>
@@ -222,7 +244,9 @@ export default function ResultCard({
             <span style={s.rowLabel}>
               ऐड-ऑन भाव <span style={s.rowLabelSub}>(Add-on per 10g)</span>
             </span>
-            <span style={s.rowValue}>₹ {fmt((weight / 10) * cat.addOnPrice)}</span>
+            <span style={s.rowValue}>
+              ₹ {fmt((weight / 10) * cat.addOnPrice)}
+            </span>
           </div>
         )}
         <div style={s.row}>
@@ -247,21 +271,23 @@ export default function ResultCard({
             <span style={s.rowLabel}>
               खरदारी मूल्य <span style={s.rowLabelSub}>(Purchase Price)</span>
             </span>
-            <span style={{ ...s.rowValue, color: isGold ? "#a07000" : "#3a5068" }}>
+            <span
+              style={{ ...s.rowValue, color: isGold ? "#a07000" : "#3a5068" }}
+            >
               ₹ {fmt(purchasePrice)}
             </span>
           </div>
-          <div style={{ marginTop: "6px" }}>
-            <span style={{ ...s.hindiPrice(isGold), fontSize: "0.88rem", padding: "4px 10px" }}>
+          <div style={{ marginTop: "6px", textAlign: "right" }}>
+            <span
+              style={{
+                ...s.hindiPrice(isGold),
+                fontSize: "0.88rem",
+                padding: "4px 10px",
+              }}
+            >
               {numberToHindiWords(Math.round(purchasePrice))}
             </span>
           </div>
-        </div>
-
-        {/* Total */}
-        <div style={s.totalRow(isGold)}>
-          <span style={s.totalLabel}>💰 कुल देय राशि</span>
-          <span style={s.totalValue(isGold)}>₹ {fmt(finalPrice)}</span>
         </div>
       </div>
     </div>
