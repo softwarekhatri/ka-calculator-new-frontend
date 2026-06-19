@@ -59,12 +59,12 @@ const s = {
     gap: '1px',
   },
   dateHindi: {
-    fontSize: '0.78rem',
+    fontSize: '1rem',
     color: '#FFD700',
     fontWeight: '600',
   },
   dateEn: {
-    fontSize: '0.68rem',
+    fontSize: '0.88rem',
     color: '#6b82a0',
   },
   actions: {
