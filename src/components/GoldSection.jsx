@@ -69,7 +69,7 @@ const s = {
   badgePrice: {
     fontSize: "1.1rem",
     fontWeight: "800",
-    color: "#1a0800",
+    color: "#ffffff",
   },
   body: { padding: "22px 22px 26px" },
   label: {
